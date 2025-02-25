@@ -49,11 +49,11 @@ class TweetInput extends StatelessWidget {
               Gap(8),
               Expanded(
                 child: TextField(
-                  maxLines: null, // 高さ無制限
-                  // keyboardType: TextInputType.multiline,
+                  maxLines: null,
+                  keyboardType: TextInputType.multiline,
                   decoration: InputDecoration(
                     hintText: "いまどうしてる？",
-                    border: InputBorder.none, // 枠線を消す
+                    border: InputBorder.none,
                   ),
                   style: TextStyle(fontSize: 18),
                 ),
