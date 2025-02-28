@@ -23,11 +23,18 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       actions: [
-        ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.black, backgroundColor: Colors.white),
-            child: const Text('アップグレード'))
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  foregroundColor: Colors.black,
+                  backgroundColor: Colors.white),
+              child: const Text('アップグレード')),
+        )
       ],
     );
   }

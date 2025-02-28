@@ -64,37 +64,49 @@ class HomeBody extends StatelessWidget {
                   ),
                   const Gap(8),
                   //reply, retweet, good, shareボタンの作成
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 32),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 32),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Expanded(
                           child: Row(children: [
-                            Icon(Icons.chat_outlined),
-                            Gap(8),
-                            Text('0'),
+                            IconButton(
+                              icon: const Icon(Icons.chat_outlined),
+                              onPressed: () {},
+                            ),
+                            const Gap(8),
+                            const Text('0'),
                           ]),
                         ),
                         Expanded(
                           child: Row(children: [
-                            Icon(Icons.autorenew),
-                            Gap(8),
-                            Text('0'),
+                            IconButton(
+                              icon: const Icon(Icons.autorenew),
+                              onPressed: () {},
+                            ),
+                            const Gap(8),
+                            const Text('0'),
                           ]),
                         ),
                         Expanded(
                           child: Row(children: [
-                            Icon(Icons.favorite_outline),
-                            Gap(8),
-                            Text('0'),
+                            IconButton(
+                              icon: const Icon(Icons.favorite_outline),
+                              onPressed: () {},
+                            ),
+                            const Gap(8),
+                            const Text('0'),
                           ]),
                         ),
-                        Icon(Icons.share),
+                        IconButton(
+                          icon: const Icon(Icons.share),
+                          onPressed: () {},
+                        ),
                       ],
                     ),
                   ),
-                  const Gap(12), // 次のツイートとの間隔
+                  const Gap(12),
                   const Divider(height: 1, color: Colors.grey),
                 ],
               ),

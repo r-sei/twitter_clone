@@ -12,26 +12,29 @@ class TweetInput extends StatelessWidget {
         shape: const Border(
           bottom: BorderSide(
             color: Colors.grey,
-            width: 2,
+            width: 1.0,
           ),
         ),
         leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
+            onPressed: () => Navigator.pop(context),
             icon: const Icon(Icons.clear)),
         actions: [
-          ElevatedButton(
-            //要修正
-            onPressed: null,
-            style: ElevatedButton.styleFrom(
-              // shape: ,
-              backgroundColor: Colors.blue,
-            ),
-            child: const Text(
-              'Tweet',
-              style: TextStyle(
-                color: Colors.white,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: ElevatedButton(
+              //要修正
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                backgroundColor: Colors.blue,
+              ),
+              child: const Text(
+                'Tweet',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
@@ -44,7 +47,7 @@ class TweetInput extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ProfileIcon(
-                iconSize: 16,
+                iconSize: 24,
               ),
               Gap(8),
               Expanded(
