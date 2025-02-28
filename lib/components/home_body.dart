@@ -9,20 +9,22 @@ class HomeBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-      children: const [
+      children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ProfileIcon(iconSize: 24),
-            // Gap(8),
+            const ProfileIcon(iconSize: 24),
+            const Gap(8),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'User Name',
                         style: TextStyle(
                           fontSize: 16,
@@ -30,33 +32,39 @@ class HomeBody extends StatelessWidget {
                           color: Colors.black,
                         ),
                       ),
-                      Gap(4),
-                      Text(
+                      const Gap(4),
+                      const Text(
                         '@User ID',
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.grey,
                         ),
                       ),
-                      Gap(4),
-                      Text(
+                      const Gap(4),
+                      const Text(
                         'dd/month',
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.grey,
                         ),
                       ),
+                      const Spacer(),
+                      IconButton(
+                        icon: const Icon(Icons.more_horiz, size: 20),
+                        onPressed: () {}, //今回は見送り
+                      ),
                     ],
                   ),
-                  Text(
-                    'Tweetの内容を表示。なお、画面端で改行されるようにしている。例えば、日本語のような全角であれば文字単位で改行されるが、if it is half-width, such as English, the line is properly broken based on whitespace. ',
-                    maxLines: null, //ワンチャンまずいことになるかも
+                  const Text(
+                    'test',
+                    maxLines: null,
                     style: TextStyle(
                       color: Colors.black,
                     ),
                   ),
-                  //reply, retweet, good, option?ボタンの作成
-                  Padding(
+                  const Gap(8),
+                  //reply, retweet, good, shareボタンの作成
+                  const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 32),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -86,6 +94,8 @@ class HomeBody extends StatelessWidget {
                       ],
                     ),
                   ),
+                  const Gap(12), // 次のツイートとの間隔
+                  const Divider(height: 1, color: Colors.grey),
                 ],
               ),
             )

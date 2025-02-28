@@ -9,7 +9,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       shape: const Border(
         bottom: BorderSide(
-          color: Colors.grey,
+          color: Colors.white,
           width: 2,
         ),
       ),
@@ -24,9 +24,9 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         ElevatedButton(
-            onPressed: null,
+            onPressed: () {},
             style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.blue, backgroundColor: Colors.black),
+                foregroundColor: Colors.black, backgroundColor: Colors.white),
             child: const Text('アップグレード'))
       ],
     );

@@ -19,6 +19,7 @@ class HomePage extends StatelessWidget {
             MaterialPageRoute(builder: (context) => const TweetInput()),
           );
         },
+        shape: const CircleBorder(),
         child: const Icon(Icons.add),
       ),
       bottomNavigationBar: const HomeBottomNavigation(),
