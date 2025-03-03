@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:twitter_clone/components/profile_icon.dart';
+import 'package:twitter_clone/components/tweet_button.dart';
 
 class TweetInput extends StatelessWidget {
   const TweetInput({super.key});
@@ -18,25 +19,10 @@ class TweetInput extends StatelessWidget {
         leading: IconButton(
             onPressed: () => Navigator.pop(context),
             icon: const Icon(Icons.clear)),
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: ElevatedButton(
-              //要修正
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                backgroundColor: Colors.blue,
-              ),
-              child: const Text(
-                'Tweet',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-            ),
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: TweetButton(),
           ),
         ],
       ),

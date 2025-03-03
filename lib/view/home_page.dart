@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gap/gap.dart';
 import 'package:twitter_clone/components/home_app_bar.dart';
-import 'package:twitter_clone/components/home_body.dart';
+import 'package:twitter_clone/components/tweet_tile.dart';
 import 'package:twitter_clone/components/home_bottom_navigation.dart';
 import 'package:twitter_clone/components/tweet_input.dart';
 import 'package:twitter_clone/provider/service_provider.dart';
@@ -16,7 +17,14 @@ class HomePage extends ConsumerWidget {
     return tweetData.when(data: (data) {
       return Scaffold(
         appBar: const HomeAppBar(),
-        body: const HomeBody(),
+        body: ListView(
+          children: [
+            for (final tweet in data) ...{
+              TweetTile(tweet: tweet),
+              const Gap(16),
+            },
+          ],
+        ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Navigator.push(
