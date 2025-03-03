@@ -29,7 +29,7 @@ class HomePage extends ConsumerWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const TweetInput()),
+              MaterialPageRoute(builder: (context) => TweetInput()),
             );
           },
           shape: const CircleBorder(),

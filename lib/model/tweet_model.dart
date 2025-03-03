@@ -22,8 +22,8 @@ class TweetModel {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'TweetID': tweetID,
-      'UserID': userID,
-      'UserName': userName,
+      'userID': userID,
+      'userName': userName,
       'date': date,
       'tweetText': tweetText,
       'good': good,
@@ -34,8 +34,8 @@ class TweetModel {
   factory TweetModel.fromMap(Map<String, dynamic> map) {
     return TweetModel(
       tweetID: map['TweetID'] != null ? map['TweetID'] as String : null,
-      userID: map['UserID'] as String,
-      userName: map['UserName'] as String,
+      userID: map['userID'] as String,
+      userName: map['userName'] as String,
       date: map['date'] as String,
       tweetText: map['tweetText'] as String,
       good: map['good'] as bool,

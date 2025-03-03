@@ -17,7 +17,7 @@ class TweetTile extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const ProfileIcon(iconSize: 24),
+          const ProfileIcon(iconSize: 24), //ここどうしよ
           const Gap(8),
           Expanded(
             child: Column(
