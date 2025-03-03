@@ -15,12 +15,16 @@ class TweetButton extends ConsumerWidget {
       //＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
       onPressed: () {
         ref.read(serviceProvider).createNewTweet(TweetModel(
-            userID: 'hoge',
-            userName: 'hoge',
-            date: getDay(),
-            tweetText: textController.text,
-            good: false,
-            reTweet: false));
+              userID: 'hoge',
+              userName: 'hoge',
+              date: getDay(),
+              tweetText: textController.text,
+              good: false,
+              reTweet: false,
+              replyCount: 0,
+              goodCount: 0,
+              reTweetCount: 0,
+            ));
 
         // 初期化
         textController.clear();
