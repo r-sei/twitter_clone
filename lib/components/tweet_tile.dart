@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:twitter_clone/components/profile_icon.dart';
 import 'package:twitter_clone/model/tweet_model.dart';
+import 'package:twitter_clone/provider/tweet_action_provider.dart';
 
 class TweetTile extends ConsumerWidget {
   const TweetTile({super.key, required this.tweet});
@@ -11,6 +12,10 @@ class TweetTile extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final isReTweeted =
+        ref.watch(reTweetProvider)[tweet.tweetID] ?? tweet.reTweet;
+    final isGood = ref.watch(goodProvider)[tweet.tweetID] ?? tweet.good;
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
       child: Row(
@@ -70,7 +75,7 @@ class TweetTile extends ConsumerWidget {
                   ),
                 ),
                 const Gap(8),
-                //reply, retweet, good, shareボタンの作成
+                //reply, retweet, good, shareボタン
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 32),
                   child: Row(
@@ -83,14 +88,27 @@ class TweetTile extends ConsumerWidget {
                             onPressed: () {},
                           ),
                           const Gap(8),
-                          const Text('0'), //threads
+                          const Text('0'), //reply
                         ]),
                       ),
                       Expanded(
                         child: Row(children: [
                           IconButton(
-                            icon: const Icon(Icons.autorenew),
-                            onPressed: () {},
+                            icon: Icon(
+                              isReTweeted
+                                  ? Icons.autorenew
+                                  : Icons.autorenew_outlined,
+                              color: isReTweeted ? Colors.blue : Colors.black,
+                            ),
+                            onPressed: () {
+                              ref
+                                  .read(reTweetProvider.notifier)
+                                  .update((state) {
+                                final newState = Map<String, bool>.from(state);
+                                newState[tweet.tweetID!] = !isReTweeted;
+                                return newState;
+                              });
+                            },
                           ),
                           const Gap(8),
                           const Text('0'), //retweet
@@ -99,8 +117,18 @@ class TweetTile extends ConsumerWidget {
                       Expanded(
                         child: Row(children: [
                           IconButton(
-                            icon: const Icon(Icons.favorite_outline),
-                            onPressed: () {},
+                            icon: Icon(
+                              isGood ? Icons.favorite : Icons.favorite_border,
+                              color: isGood ? Colors.pink : Colors.grey,
+                              size: 20,
+                            ),
+                            onPressed: () {
+                              ref.read(goodProvider.notifier).update((state) {
+                                final newState = Map<String, bool>.from(state);
+                                newState[tweet.tweetID!] = !isGood;
+                                return newState;
+                              });
+                            },
                           ),
                           const Gap(8),
                           const Text('0'), //good
