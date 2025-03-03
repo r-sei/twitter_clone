@@ -46,12 +46,12 @@ class TweetModel {
   factory TweetModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> doc) {
     return TweetModel(
       tweetID: doc.id,
-      userID: doc['description'],
-      userName: doc['titleTask'],
-      date: doc['category'],
-      tweetText: doc['dateTask'],
-      good: doc['timeTask'],
-      reTweet: doc['isDone'],
+      userID: doc['userID'],
+      userName: doc['userName'],
+      date: doc['date'],
+      tweetText: doc['tweetText'],
+      good: doc['good'],
+      reTweet: doc['reTweet'],
     );
   }
 }
