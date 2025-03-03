@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
+import 'package:twitter_clone/components/option_button.dart';
 import 'package:twitter_clone/components/profile_icon.dart';
 import 'package:twitter_clone/model/tweet_model.dart';
 import 'package:twitter_clone/provider/service_provider.dart';
@@ -61,12 +62,7 @@ class TweetTile extends ConsumerWidget {
                       ),
                     ),
                     const Spacer(),
-                    IconButton(
-                      icon: const Icon(Icons.more_horiz, size: 20),
-                      onPressed: () {
-                        ref.read(serviceProvider).deleteTweet(tweet.tweetID);
-                      },
-                    ),
+                    OptionButton(tweet: tweet),
                   ],
                 ),
                 Text(
