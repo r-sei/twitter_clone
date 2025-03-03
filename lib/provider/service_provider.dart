@@ -8,13 +8,13 @@ final serviceProvider = StateProvider<TwitterService>((ref) {
 });
 
 final fetchStreamProvider = StreamProvider<List<TweetModel>>((ref) async* {
-  final getData =
-      FirebaseFirestore.instance.collection('twitterClone').snapshots().map(
-            (event) => event.docs
-                .map((snapshot) => TweetModel.fromSnapshot(
-                    snapshot as DocumentSnapshot<Map<String, dynamic>>))
-                .toList(),
-          );
+
+  final getData = FirebaseFirestore.instance.collection('twitterClone').snapshots().map(
+        (event) => event.docs
+            .map((snapshot) => TweetModel.fromSnapshot(
+                snapshot as DocumentSnapshot<Map<String, dynamic>>))
+            .toList(),
+      );
 
   yield* getData;
 });

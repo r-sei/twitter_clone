@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:twitter_clone/components/profile_icon.dart';
 import 'package:twitter_clone/model/tweet_model.dart';
+import 'package:twitter_clone/provider/service_provider.dart';
 import 'package:twitter_clone/provider/tweet_action_provider.dart';
 
 class TweetTile extends ConsumerWidget {
@@ -62,7 +63,9 @@ class TweetTile extends ConsumerWidget {
                     const Spacer(),
                     IconButton(
                       icon: const Icon(Icons.more_horiz, size: 20),
-                      onPressed: () {},
+                      onPressed: () {
+                        ref.read(serviceProvider).deleteTweet(tweet.tweetID);
+                      },
                     ),
                   ],
                 ),
@@ -102,12 +105,8 @@ class TweetTile extends ConsumerWidget {
                             ),
                             onPressed: () {
                               ref
-                                  .read(reTweetProvider.notifier)
-                                  .update((state) {
-                                final newState = Map<String, bool>.from(state);
-                                newState[tweet.tweetID!] = !isReTweeted;
-                                return newState;
-                              });
+                                  .read(serviceProvider)
+                                  .reTweet(tweet.tweetID, !tweet.reTweet);
                             },
                           ),
                           const Gap(8),
@@ -123,11 +122,9 @@ class TweetTile extends ConsumerWidget {
                               size: 20,
                             ),
                             onPressed: () {
-                              ref.read(goodProvider.notifier).update((state) {
-                                final newState = Map<String, bool>.from(state);
-                                newState[tweet.tweetID!] = !isGood;
-                                return newState;
-                              });
+                              ref
+                                  .read(serviceProvider)
+                                  .good(tweet.tweetID, !tweet.good);
                             },
                           ),
                           const Gap(8),
