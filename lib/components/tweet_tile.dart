@@ -84,10 +84,12 @@ class TweetTile extends ConsumerWidget {
                         child: Row(children: [
                           IconButton(
                             icon: const Icon(Icons.chat_outlined),
-                            onPressed: () {},
+                            onPressed: () {
+                              //count処理
+                            },
                           ),
                           const Gap(8),
-                          const Text('0'), //reply
+                          Text('${tweet.replyCount}'), //reply
                         ]),
                       ),
                       Expanded(
@@ -103,10 +105,11 @@ class TweetTile extends ConsumerWidget {
                               ref
                                   .read(serviceProvider)
                                   .reTweet(tweet.tweetID, !tweet.reTweet);
+                              //count処理
                             },
                           ),
                           const Gap(8),
-                          const Text('0'), //retweet
+                          Text('${tweet.reTweetCount}'), //retweet
                         ]),
                       ),
                       Expanded(
@@ -121,10 +124,11 @@ class TweetTile extends ConsumerWidget {
                               ref
                                   .read(serviceProvider)
                                   .good(tweet.tweetID, !tweet.good);
+                              //count処理
                             },
                           ),
                           const Gap(8),
-                          const Text('0'), //good
+                          Text('${tweet.goodCount}'), //good
                         ]),
                       ),
                       IconButton(
