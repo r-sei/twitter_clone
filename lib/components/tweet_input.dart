@@ -27,7 +27,7 @@ class TweetInput extends ConsumerWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: TweetButton(
               textController: textController,
-            ), //＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+            ), 
           ),
         ],
       ),

@@ -7,7 +7,7 @@ class TweetModel {
   String? tweetID;
   final String userID;
   final String userName;
-  final String date;
+  final Timestamp date;
   final String tweetText;
   final bool good;
   final bool reTweet;
@@ -48,7 +48,7 @@ class TweetModel {
       tweetID: map['tweetID'] != null ? map['tweetID'] as String : null,
       userID: map['userID'] as String,
       userName: map['userName'] as String,
-      date: map['date'] as String,
+      date: map['date'] as Timestamp,
       tweetText: map['tweetText'] as String,
       good: map['good'] as bool,
       reTweet: map['reTweet'] as bool,
