@@ -7,6 +7,7 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     // final TextEditingController textController;
+    final fillColor = Colors.grey.shade100;
 
     return AppBar(
       shape: const Border(
@@ -17,15 +18,29 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       leading: const ProfileIconButton(iconSize: 24),
       centerTitle: true,
-      title: const TextField(
+      title: TextField(
+        textAlign: TextAlign.center,
         keyboardType: TextInputType.multiline,
         // controller: textController,
         decoration: InputDecoration(
-          prefixIcon: Icon(Icons.search),
+          filled: true,
+          fillColor: fillColor,
+          prefixIcon: const Icon(Icons.search),
           hintText: "検索",
-          border: InputBorder.none,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(32),
+            borderSide: BorderSide(color: fillColor),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(32),
+            borderSide: BorderSide(color: fillColor),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(32),
+            borderSide: BorderSide(color: fillColor),
+          ),
         ),
-        style: TextStyle(fontSize: 18),
+        style: const TextStyle(fontSize: 18),
       ),
       actions: [
         Padding(
