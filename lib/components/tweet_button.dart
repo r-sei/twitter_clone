@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:twitter_clone/components/format_from_timstamp.dart';
 import 'package:twitter_clone/model/tweet_model.dart';
 import 'package:twitter_clone/provider/service_provider.dart';
 
@@ -14,7 +13,8 @@ class TweetButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return ElevatedButton(
       onPressed: () {
-        Timestamp tweetedAt = Timestamp.fromDate(DateTime.now()); //現在時刻をTimestampで初期化
+        Timestamp tweetedAt =
+            Timestamp.fromDate(DateTime.now()); //現在時刻をTimestampで初期化
 
         ref.read(serviceProvider).createNewTweet(TweetModel(
               userID: 'hoge',
