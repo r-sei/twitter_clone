@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:twitter_clone/components/home_app_bar.dart';
-import 'package:twitter_clone/components/home_bottom_navigation.dart';
 import 'package:twitter_clone/components/side_menu.dart';
 import 'package:twitter_clone/components/tweet_input.dart';
 import 'package:twitter_clone/components/tweet_tile.dart';
@@ -37,7 +36,6 @@ class HomePage extends ConsumerWidget {
           shape: const CircleBorder(),
           child: const Icon(Icons.add),
         ),
-        bottomNavigationBar: const HomeBottomNavigation(),
       );
     }, error: (error, _) {
       return Center(
