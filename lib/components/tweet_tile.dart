@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
+import 'package:twitter_clone/components/format_from_timstamp.dart';
 import 'package:twitter_clone/components/option_button.dart';
 import 'package:twitter_clone/components/profile_icon.dart';
 import 'package:twitter_clone/model/tweet_model.dart';
@@ -55,7 +56,7 @@ class TweetTile extends ConsumerWidget {
                     const Gap(4),
                     Text(
                       //date
-                      tweet.date,
+                      formatTimestamp(tweet.date),
                       style: const TextStyle(
                         fontSize: 16,
                         color: Colors.grey,
