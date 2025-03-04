@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:twitter_clone/components/profile_icon.dart';
+import 'package:twitter_clone/components/profile_icon_button.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({super.key});
@@ -13,7 +13,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           width: 2,
         ),
       ),
-      leading: const ProfileIcon(iconSize: 24),
+      leading: const ProfileIconButton(iconSize: 24),
       centerTitle: true,
       title: const Text(
         '最新ツイート',
