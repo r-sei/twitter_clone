@@ -14,7 +14,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       leading: ProfileIconButton(
-        iconSize: 24,
+        iconSize: 20,
         imageURL: 'assets/profile.png',
         onPressed: () => Scaffold.of(context).openDrawer(),
       ),

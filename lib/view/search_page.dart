@@ -7,10 +7,18 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: SearchAppBar(),
-      drawer: SideMenu(),
-      body: Row(),
+    return Scaffold(
+      appBar: const SearchAppBar(),
+      drawer: const SideMenu(),
+      body: Center(
+        child: Column(
+          children: [
+            Container(
+              child: const Text('未実装'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
