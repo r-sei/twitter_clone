@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:twitter_clone/components/format_from_timstamp.dart';
 import 'package:twitter_clone/components/option_button.dart';
-import 'package:twitter_clone/components/profile_icon.dart';
+import 'package:twitter_clone/components/profile_icon_button.dart';
 import 'package:twitter_clone/model/tweet_model.dart';
 import 'package:twitter_clone/provider/service_provider.dart';
 import 'package:twitter_clone/provider/tweet_action_provider.dart';
@@ -25,7 +25,7 @@ class TweetTile extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const ProfileIcon(iconSize: 24), //ここどうしよ
+          const ProfileIconButton(iconSize: 24, imageURL: 'assets/profile.png',),//ここどうしよ
           const Gap(8),
           Expanded(
             child: Column(

@@ -16,7 +16,11 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
           width: 2,
         ),
       ),
-      leading: const ProfileIconButton(iconSize: 24),
+      leading: ProfileIconButton(
+        iconSize: 24,
+        imageURL: 'assets/profile.png',
+        onPressed: () => Scaffold.of(context).openDrawer(),
+      ),
       centerTitle: true,
       title: TextField(
         textAlign: TextAlign.center,

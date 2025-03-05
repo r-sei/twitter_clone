@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
-import 'package:twitter_clone/components/profile_icon.dart';
+import 'package:twitter_clone/components/profile_icon_button.dart';
 import 'package:twitter_clone/components/tweet_button.dart';
 
 class TweetInput extends ConsumerWidget {
@@ -27,7 +27,7 @@ class TweetInput extends ConsumerWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: TweetButton(
               textController: textController,
-            ), 
+            ),
           ),
         ],
       ),
@@ -37,8 +37,9 @@ class TweetInput extends ConsumerWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const ProfileIcon(
+              const ProfileIconButton(
                 iconSize: 24,
+                imageURL: 'assets/profile.png',
               ),
               const Gap(8),
               Expanded(
