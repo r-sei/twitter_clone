@@ -7,54 +7,52 @@ class SideMenuHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-      child: const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        ProfileIconButton(
+          iconSize: 24,
+          imageURL: 'assets/profile.png',
+        ),
+        Gap(4),
+        Text(
+          'hoge',
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w700,
+            color: Colors.black,
+          ),
+        ),
+        Gap(4),
+        Text(
+          '@hoge',
+          style: TextStyle(
+            fontSize: 16,
+            color: Colors.grey,
+          ),
+        ),
+        Gap(4),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            ProfileIconButton(
-              iconSize: 24,
-              imageURL: 'assets/profile.png',
-            ),
-            Gap(4),
             Text(
-              'hoge',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w700,
-                color: Colors.black,
-              ),
-            ),
-            Gap(4),
-            Text(
-              '@hoge',
+              '${1}Followers',
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.grey,
               ),
             ),
             Gap(4),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  '${1}Followers',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey,
-                  ),
-                ),
-                Gap(4),
-                Text(
-                  '${1}Following',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey,
-                  ),
-                ),
-              ],
-            )
-          ]),
+            Text(
+              '${1}Following',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey,
+              ),
+            ),
+          ],
+        )
+      ]),
     );
   }
 }
